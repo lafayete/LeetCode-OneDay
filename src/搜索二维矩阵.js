@@ -25,7 +25,7 @@
 var searchMatrix = function(matrix, target) {
     let m = matrix.length;
     let n = matrix[0].length;
-    //二分查抄
+    //二分查找
     let left = 0;
     let right = m * n -1;
     let pivotIdx, pivotElment;
