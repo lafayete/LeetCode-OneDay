@@ -34,6 +34,4 @@ function LastRemaining_Solution(n, m) {
     return current.val;
 
 
-
-
 }
