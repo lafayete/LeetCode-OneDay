@@ -1,7 +1,6 @@
 
 
 // 自顶向下
-
 var isBalanced = function(root) {
 
     if(!root) return true;
@@ -22,10 +21,7 @@ var isBalanced = function(root) {
 
 };
 
-
-
 // 自下向上
-
 
 var isBalanced2 = function(root) {
 
