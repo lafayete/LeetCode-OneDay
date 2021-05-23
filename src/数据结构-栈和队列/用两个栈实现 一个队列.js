@@ -20,6 +20,7 @@ CQueue.prototype.deleteHead = function() {
 
     if(this.stack2.length) {
         return this.stack2.pop()
+        
     } else {
 
 
