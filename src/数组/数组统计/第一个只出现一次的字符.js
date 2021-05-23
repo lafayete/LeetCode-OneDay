@@ -21,8 +21,6 @@ var firstUniqChar = function(s) {
 
     let str;
 
-    console.log(map);
-
     for(let [key, value] of map.entries()) {
 
         if (value === 1) {
