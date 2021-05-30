@@ -54,7 +54,6 @@
 
 // 更优的算法
 
-
 var searchFirst = function(nums, target) {
 
     let left = 0;
