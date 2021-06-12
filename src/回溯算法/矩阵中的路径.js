@@ -6,16 +6,18 @@ var exist = function(board, word) {
 
         for(let j=0; j< board[0].length; j++) {
 
-            dfs(board, list, i, j, 0)
+            if(dfs(board, list, i, j, 0)) return true;
             
         }
 
     }
 
+    return false;
+
 
     function dfs(board, list, i ,j ,index) {
 
-       if(i > board.length || i < 0 || j > board[0].length || j < 0 || board[i][j] !==list[index]) return false;
+       if(i >= board.length || i < 0 || j >= board[0].length || j < 0 || board[i][j] != list[index]) return false;
 
        if(index === list.length - 1) return true;
 
@@ -23,7 +25,7 @@ var exist = function(board, word) {
 
        res = dfs(board, list , i -1 ,j , index + 1) || dfs(board, list , i + 1 ,j , index + 1) || dfs(board, list , i ,j - 1 , index + 1) || dfs(board, list , i ,j + 1 , index + 1)
 
-       board[i][j] = word[index];
+       board[i][j] = list[index];
 
        return res;
 
