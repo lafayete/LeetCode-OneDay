@@ -31,6 +31,3 @@ var longestCommonSubsequence = function(text1, text2) {
     return dp[n1][n2];
 
 };
-
-
-console.log(longestCommonSubsequence('abc', 'def'));
