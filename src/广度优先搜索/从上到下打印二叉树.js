@@ -24,7 +24,6 @@ var levelOrder = function(root) {
 
         }
 
-
     }
 
     return result;
