@@ -1,37 +1,41 @@
-let queue = [];
+var levelOrder = function(root) {
 
-let result = [];
+    let queue = [];
 
-if(root) {
+    let result = [];
 
-    queue.push(root);
+    if(root) {
 
-    while(queue.length) {
+        queue.push(root);
 
-        let arr = [];
+        while(queue.length) {
 
-        let size = queue.length;
+            let arr = [];
 
-        for(let i=0; i< size; i++) {
+            let size = queue.length;
 
-            let node = queue.shift();
+            for(let i=0; i< size; i++) {
 
-            arr.push(node.val);
+                let node = queue.shift();
 
-            if(node.left) {
-                queue.push(node.left);
+                arr.push(node.val);
+
+                if(node.left) {
+                    queue.push(node.left);
+                }
+        
+                if(node.right) {
+                    queue.push(node.right);
+                }
+
             }
+        
+            result.push(arr);
     
-            if(node.right) {
-                queue.push(node.right);
-            }
-
         }
-    
-        result.push(arr);
 
     }
 
-}
+    return result;
 
-return result;
+};
