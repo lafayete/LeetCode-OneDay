@@ -9,7 +9,7 @@ var search = function(nums, target) {
     while(left <=right) {
 
 
-        let pivot = Math.floor(right - left / 2 );
+        let pivot = left + Math.floor(right - left / 2 );
 
 
         if (nums[pivot] === target) {
