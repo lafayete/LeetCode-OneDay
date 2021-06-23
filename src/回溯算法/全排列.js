@@ -2,45 +2,34 @@ var permute = function(nums) {
 
     let result = [];
 
-    recur(0);
+    recur([]);
 
-    function recur(begin) {
+    function recur(path) {
 
-        if(begin === nums.length) {
+        if(path.length === nums.length) {
 
-            result.push([...nums]);
+            result.push([...path]);
 
-            return
+            return;
+        }
 
-        } else {
+        for(let i= 0; i< nums.length; i++) {
 
-            for(let i=begin; i < nums.length; i++) {
+                if(path.includes(nums[i])) {
+                    continue;
+                }
 
-                swap(nums, i, begin);
+                path.push(nums[i]);
 
-                recur(begin + 1);
+                recur(path);
 
-                swap(nums, i, begin);
-
-            }
-
+                path.pop();
 
         }
 
     }
 
     return result;
-
-    function swap(arr, i, j) {
-
-        let temp = arr[i];
-
-        arr[i] = arr[j];
-
-        arr[j] = temp;
-
-    }
-
 
 };
 
