@@ -8,9 +8,7 @@ var search = function(nums, target) {
 
     while(left <=right) {
 
-
         let pivot = left + Math.floor(right - left / 2 );
-
 
         if (nums[pivot] === target) {
 
@@ -18,21 +16,16 @@ var search = function(nums, target) {
 
             break;
 
-
         } else if(nums[pivot] > target) {
-
 
             right = pivot - 1;
 
         } else {
 
-
             left = pivot + 1;
         }
 
-
     }
-
 
     return result;
 
