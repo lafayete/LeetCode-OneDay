@@ -1,43 +1,83 @@
+/**
+ * Initialize your data structure here.
+ */
+var MyQueue = function() {
 
-function CQueue() {
-    
-   this.stack1 = [];
+    this.stack1 = [];
 
     this.stack2 = [];
 
-}
+};
 
+/**
+ * Push element x to the back of queue. 
+ * @param {number} x
+ * @return {void}
+ */
+MyQueue.prototype.push = function(x) {
 
-CQueue.prototype.appendTail = function(value) {
-
-
-    this.stack1.push(value);
+    this.stack1.push(x);
 
 };
 
+/**
+ * Removes the element from in front of queue and returns that element.
+ * @return {number}
+ */
+MyQueue.prototype.pop = function() {
 
-CQueue.prototype.deleteHead = function() {
+    if(!this.stack2.length) {
 
-    if(this.stack2.length) {
-        return this.stack2.pop()
         
-    } else {
+        while(this.stack1.length) {
 
+            let val = this.stack1.pop();
+
+            this.stack2.push(val);
+
+        }
+
+    }
+
+    return this.stack2.pop();
+
+
+};
+
+/**
+ * Get the front element.
+ * @return {number}
+ */
+MyQueue.prototype.peek = function() {
+
+    if(!this.stack2.length) {
 
 
         while(this.stack1.length) {
-            this.stack2.push(this.stack1.pop());
+
+            let val = this.stack1.pop();
+
+            this.stack2.push(val);
+
+            }
+
         }
-    
-    
-    
-        if(!this.stackB.length){
-            return -1;
-        }else{
-            return this.stackB.pop();
-        }
+
+
+    return this.stack2[this.stack2.length - 1];
+
+};
+
+/**
+ * Returns whether the queue is empty.
+ * @return {boolean}
+ */
+MyQueue.prototype.empty = function() {
+
+    if(!this.stack1.length && !this.stack2.length) {
+
+            return true;
     }
 
-        
-
+    return false;
 };
