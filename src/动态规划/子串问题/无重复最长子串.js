@@ -37,27 +37,29 @@
 //滑动窗口
 var lengthOfLongestSubstring = function(s) {
 
-    const map = {};
+  let map = new Map();
 
-    let left = 0;
-    let right = 0;
-  
-    let max = 0;
-    while (right < s.length) {
-      if (!map[s[right]]) {
-        map[s[right]] = 1;
-        right++;
-      } else {
-        while (left < right) {
-          delete map[s[left]];
-          if (map[s[left++]] === map[s[right]]) {
-            break;
-          }
-        }
-      }
-  
-      max = Math.max(max, right - left);
+  let start = 0;
+
+  let maxLength = 0;
+
+  for(let i=0; i< s.length; i++) {
+
+    if(map.get(s[i]) >= start) {
+
+        start = map.get(s[i]) + 1;
+    
     }
-  
-    return max;
+
+    map.set(s[i], i);
+
+    maxLength =  Math.max(maxLength, i - start + 1);
+
+  }
+
+  return maxLength;
+
 };
+
+
+lengthOfLongestSubstring('abcabcbb');
