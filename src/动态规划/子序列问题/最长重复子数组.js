@@ -17,7 +17,6 @@ var findLength = function(nums1, nums2) {
     for(let i =1 ;i<=n1; i++) {
 
         for(let j=1; j <=n2; j++) {
-
             
             if(nums1[i-1] === nums2[j-1]) {
 
@@ -26,7 +25,6 @@ var findLength = function(nums1, nums2) {
             } 
 
             max= Math.max(dp[i][j], max);
-
 
         }
 
