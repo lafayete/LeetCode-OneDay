@@ -11,8 +11,6 @@
 // 输出: "bb"
 
 
-
-
 //动态规划法求解
 var longestPalindrome = function(s) {
 
