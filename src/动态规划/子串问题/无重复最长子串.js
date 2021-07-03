@@ -55,11 +55,9 @@ var lengthOfLongestSubstring = function(s) {
 
     maxLength =  Math.max(maxLength, i - start + 1);
 
+
   }
 
+
   return maxLength;
-
 };
-
-
-lengthOfLongestSubstring('abcabcbb');
