@@ -36,7 +36,7 @@ var longestPalindrome = function(s) {
 
     let start = 0;
     let maxLength = 1;
-
+    
 
     for(let i = n - 1; i >= 0; i--) {
 
