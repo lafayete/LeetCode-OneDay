@@ -1,26 +1,34 @@
 var isPalindrome = function(head) {
 
-    let result = [];
 
-    while(head !== null) {
+    if(head === null) {
+        return false;
+    }
 
-        result.push(head.val);
+    let stack = [];
+
+    while(head !==null) {
+
+        stack.push(head.val);
 
         head = head.next;
 
     }
 
-    let start = 0;
 
-    let end = result.length - 1;
 
-    while(start < end) {
+    let left = 0;
 
-        if(result[start] === result[end]) {
+    let right = stack.length - 1;
 
-            start++;
+    while(left <= right) {
 
-            end--;
+
+        if(stack[left] === stack[right]) {
+
+            left++;
+
+            right--;
 
         } else {
 
