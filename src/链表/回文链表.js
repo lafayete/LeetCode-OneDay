@@ -33,7 +33,6 @@ var isPalindrome = function(head) {
         } else {
 
             return false;
-
         }
 
     }

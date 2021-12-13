@@ -57,6 +57,6 @@ var mergeTwoLists = function(l1, l2) {
 
     prev.next = l1 !== null? l1 : l2;
 
-    return prev;
+    return prevhead.next;
 
 };
